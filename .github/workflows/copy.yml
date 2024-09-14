@@ -18,7 +18,7 @@ jobs:
 
     - name: Copy Processed Files
       run: |
-        cp -a ./site/educationwithwork.wixsite.com/index/. ./
+        cp -a ./site/educationwithwork.wixsite.com/index/ ./
 
     - name: Create ZIP for Deployment
       run: |

@@ -1,0 +1,32 @@
+name: Scrape and Process Website
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  scrape-and-process:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install HTTrack
+      run: sudo apt-get install httrack -y
+
+    - name: Download Website with HTTrack
+      run: |
+        httrack https://educationwithwork.wixsite.com/index/ -O ./site/ "+*.wixsite.com/*" \
+        --quiet --depth=3 --disable-security-limits --robots=0
+    - name: Run Processing Script
+      run: bash process_html.sh
+
+    - name: Commit changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add .
+        git commit -m "Processed and scraped website"
+        git push

@@ -12,13 +12,25 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: List Files for Debugging
+      run: |
+        ls -R ./site/educationwithwork.wixsite.com/index/ || echo "Directory not found"
+
     - name: Clean Main Directory (Excluding Hidden Files)
       run: |
         find . -mindepth 1 -maxdepth 1 ! -name ".git" ! -name ".github" -exec rm -rf {} \;
 
-    - name: Copy Processed Files
+    - name: Copy Processed Files (if directory exists)
       run: |
-        cp -a ./site/educationwithwork.wixsite.com/index/. ./
+        if [ -d "./site/educationwithwork.wixsite.com/index/" ]; then
+          cp -a ./site/educationwithwork.wixsite.com/index/. ./
+        else
+          echo "Directory does not exist, skipping copy step."
+        fi
+
+    - name: List Files After Copying (Debugging)
+      run: |
+        ls -R ./
 
     - name: Create ZIP for Deployment
       run: |
@@ -27,7 +39,7 @@ jobs:
     - name: Deploy to Cloudflare Pages
       env:
         CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-        CF_PROJECT_NAME: 'bloggingsite'  # Your exact project name in Cloudflare Pages
+        CF_PROJECT_NAME: 'bloggingsite'  # Your Cloudflare Pages project name
       run: |
         API_ENDPOINT="https://api.cloudflare.com/client/v4/pages/projects/${CF_PROJECT_NAME}/deployments"
         response=$(curl -X POST "$API_ENDPOINT" \

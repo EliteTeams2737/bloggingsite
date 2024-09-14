@@ -44,7 +44,7 @@ jobs:
         CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         CF_PROJECT_NAME: 'your-project-name'  # Replace with your actual project name
       run: |
-        API_ENDPOINT="https://api.cloudflare.com/client/v4/pages/projects/${CF_PROJECT_NAME}/deployments"
+        API_ENDPOINT="https://api.cloudflare.com/client/v4/pages/projects/bloggingsite/deployments"
         if curl -X POST "$API_ENDPOINT" \
           -H "Authorization: Bearer $CF_API_TOKEN" \
           -H "Content-Type: application/json" \

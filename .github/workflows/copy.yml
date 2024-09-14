@@ -1,54 +1,60 @@
 name: Deploy to Cloudflare Pages
 
 on:
-  workflow_dispatch:  # Manual trigger
-  push:
-    branches:
-      - main  # Change to your default branch if different
+  schedule:
+    - cron: '0 * * * *'  # Runs every hour
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: List root directory
-      run: ls -la
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
 
-    - name: Check directory existence
+    - name: Install Dependencies
       run: |
-        if [ -d "site/educationwithwork.wixsite.com/index" ]; then
-          echo "Directory exists"
-        else
-          echo "Directory does not exist"
-          exit 1
-        fi
+        python -m pip install --upgrade pip
+        pip install requests beautifulsoup4 selenium webdriver-manager
 
-    - name: List directory contents
-      run: ls -la site/educationwithwork.wixsite.com/index
-
-    - name: Copy files to main directory
+    - name: Download website with HTTrack
       run: |
-        cp -r site/educationwithwork.wixsite.com/index/* ./
-        ls -la  # Verify files were copied
+        httrack "https://educationwithwork.wixsite.com/index/" -O ./site/ "+*.wixsite.com/*" --depth=3 --disable-security-limits --robots=0 --no-verify-ssl --quiet --max-size=10M
 
-    - name: Zip the directory
+    - name: Process HTML Files
       run: |
-        zip -r deploy.zip ./
-        ls -la deploy.zip  # Verify the zip file was created
+        # Run your HTML processing script here
+        python ./process_html.py
+
+    - name: Clean Main Directory
+      run: |
+        rm -rf ./* || true
+
+    - name: Copy Processed Files
+      run: |
+        cp -a ./site/educationwithwork.wixsite.com/index/. ./
+
+    - name: Create ZIP for Deployment
+      run: |
+        zip -r deploy.zip ./*
 
     - name: Deploy to Cloudflare Pages
       env:
         CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-        CF_PROJECT_NAME: 'your-project-name'  # Replace with your actual project name
+        CF_PROJECT_NAME: 'bloggingsite'  # Your Cloudflare Pages project name
       run: |
-        API_ENDPOINT="https://api.cloudflare.com/client/v4/pages/projects/bloggingsite/deployments"
-        if curl -X POST "$API_ENDPOINT" \
+        API_ENDPOINT="https://api.cloudflare.com/client/v4/pages/projects/${CF_PROJECT_NAME}/deployments"
+        response=$(curl -X POST "$API_ENDPOINT" \
           -H "Authorization: Bearer $CF_API_TOKEN" \
-          -H "Content-Type: application/json" \
-          -F "file=@deploy.zip"; then
+          -F "file=@deploy.zip" \
+          -H "Content-Type: multipart/form-data")
+        echo "$response"
+        if echo "$response" | grep -q '"success":true'; then
           echo "Successfully deployed to Cloudflare Pages"
         else
           echo "Failed to deploy to Cloudflare Pages"

@@ -1,5 +1,5 @@
 https://educationwithwork.wixsite.com/index/ -O ./site/ +*.wixsite.com/* -q -r3 -%! -s0
-File generated automatically on Sun, 15 Sep 2024 07:13:26, do NOT edit
+File generated automatically on Sun, 15 Sep 2024 08:19:43, do NOT edit
 
 To update a mirror, just launch httrack without any parameters
 The existing cache will be used (and modified)

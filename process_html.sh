@@ -26,7 +26,7 @@ find "$download_dir" -name "*.html" | while read -r html_file; do
   sed -i '/<meta[^>]*noindex[^>]*>/d' "$html_file"
 
   # Remove the specific Wix advertisement link (the entire block)
-  sed -i '/<a data-testid="linkElement" href="http:\/\/www.wix.com\/lpviral\/enviral\?utm_campaign=vir_wixad_live&amp;adsVersion=white&amp;orig_msid=a0039aa9-b40e-4e53-bbe6-f3283196775e" target="_blank" rel="nofollow" class="Oxzvyr YD5pSO has-custom-focus">/,/<\/a>/d' "$html_file"
+  sed -i '/<a data-testid="linkElement" href="http:\/\/www.wix.com\/lpviral\/enviral\?utm_campaign=vir_wixad_live/,/<\/a>/d' "$html_file"
 
   # Replace favicon with blog.eliteteams.online/main.jpg
   sed -i 's#https://www.wix.com/favicon.ico#https://blog.eliteteams.online/main.jpg#g' "$html_file"

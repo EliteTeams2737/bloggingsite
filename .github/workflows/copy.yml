@@ -43,15 +43,11 @@ jobs:
           echo "Error: Cloudflare API token is not set!"
           exit 1
         fi
-        if [ -z "${{ env.CF_PROJECT_NAME }}" ]; then
-          echo "Error: Cloudflare Project name is not set!"
-          exit 1
-        fi
 
     - name: Deploy to Cloudflare Pages
       env:
-        CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-        CF_PROJECT_NAME: 'bloggingsite'
+        CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}  # This still comes from GitHub Secrets
+        CF_PROJECT_NAME: 'bloggingsite'  # Hardcoded project name here
       run: |
         API_ENDPOINT="https://api.cloudflare.com/client/v4/pages/projects/${CF_PROJECT_NAME}/deployments"
         response=$(curl -X POST "$API_ENDPOINT" \

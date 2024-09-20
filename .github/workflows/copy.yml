@@ -46,10 +46,10 @@ jobs:
 
     - name: Deploy to Cloudflare Pages
       env:
-        CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}  # This still comes from GitHub Secrets
-        CF_PROJECT_NAME: 'bloggingsite'  # Hardcoded project name here
+        CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        CF_PROJECT_NAME: 'bloggingsite'  # Your project name
       run: |
-        API_ENDPOINT="https://api.cloudflare.com/client/v4/pages/projects/${CF_PROJECT_NAME}/deployments"
+        API_ENDPOINT="https://api.cloudflare.com/client/v4/accounts/5fedb019202ded0b289adf2ee0d4f3f5/pages/projects/${CF_PROJECT_NAME}/deployments"
         response=$(curl -X POST "$API_ENDPOINT" \
           -H "Authorization: Bearer $CF_API_TOKEN" \
           -F "file=@deploy.zip" \

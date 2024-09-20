@@ -1,33 +1,33 @@
 SEO Report
 Title: No Title
-Meta Description: No Meta Description
+Meta Description: 
 ----
 Title: No Title
-Meta Description: No Meta Description
+Meta Description: 
 ----
 Title: My Blog | External Knowledge B
 Meta Description: No Meta Description
 ----
 Title: No Title
-Meta Description: No Meta Description
+Meta Description: 
 ----
 Title: No Title
-Meta Description: No Meta Description
+Meta Description: 
 ----
 Title: About | External Knowledge B
 Meta Description: No Meta Description
 ----
 Title: No Title
-Meta Description: No Meta Description
+Meta Description: 
 ----
 Title: Home | External Knowledge B
 Meta Description: No Meta Description
 ----
 Title: No Title
-Meta Description: No Meta Description
+Meta Description: 
 ----
 Title: No Title
-Meta Description: No Meta Description
+Meta Description: 
 ----
 Title: Post | External Knowledge B
 Meta Description: No Meta Description
@@ -54,10 +54,10 @@ Title: The Latest Trends in Cybersecurity for 2021
 Meta Description: No Meta Description
 ----
 Title: No Title
-Meta Description: No Meta Description
+Meta Description: 
 ----
 Title: No Title
-Meta Description: No Meta Description
+Meta Description: 
 ----
 Title: How to Choose the Best Programming Language for Beginners
 Meta Description: No Meta Description

@@ -53,6 +53,7 @@ jobs:
         response=$(curl -X POST "$API_ENDPOINT" \
           -H "Authorization: Bearer $CF_API_TOKEN" \
           -F "file=@deploy.zip" \
+          -F "branch=main" \  # Specify your branch here
           -H "Content-Type: multipart/form-data")
         echo "$response"
         if echo "$response" | grep -q '"success":true'; then

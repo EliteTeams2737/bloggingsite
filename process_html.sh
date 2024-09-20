@@ -14,6 +14,10 @@ find "$download_dir" -name "*.html" | while read -r html_file; do
     continue
   fi
 
+  # Remove the top 200 pixels (approx. first few lines)
+  # Adjust the number of lines to remove based on the average line height
+  sed -i '1,20d' "$html_file"  # Adjust this number if necessary
+
   # Extract and log important SEO elements
   echo "Processing SEO tags in $html_file"
   title=$(grep -oP '(?<=<title>).*?(?=</title>)' "$html_file" || echo "No Title")

@@ -16,8 +16,8 @@ find "$download_dir" -name "*.html" | while read html_file; do
   # Safely remove the noindex tag
   sed -i '/<meta[^>]*noindex[^>]*>/d' "$html_file"
 
-  # Safely remove Wix advertisements (handle nested elements and attributes more thoroughly)
-  sed -i '/<a[^>]*href="http:\/\/www.wix.com\/lpviral\/enviral"[^>]*>.*<\/a>/d' "$html_file"
+  # Safely remove the Wix advertisement link (including nested content)
+  sed -i '/<a[^>]*href="http:\/\/www.wix.com\/lpviral\/enviral\?utm_campaign=vir_wixad_live.*<\/a>/d' "$html_file"
 
   # Replace favicon with blog.eliteteams.online/main.jpg
   sed -i 's#https://www.wix.com/favicon.ico#https://blog.eliteteams.online/main.jpg#g' "$html_file"

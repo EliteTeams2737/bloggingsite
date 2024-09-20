@@ -17,24 +17,36 @@ jobs:
       run: |
         mkdir -p ./site/educationwithwork.wixsite.com/index
 
-    - name: Clean Main Directory
+    - name: Clean Main Directory (Exclude important files)
       run: |
-        rm -rf ./* || true
+        shopt -s extglob  # Enable extended pattern matching
+        rm -rf !(.git|site) || true  # Keep the site directory and .git intact
 
     - name: Check if the site directory exists
       run: |
         if [ ! -d "./site/educationwithwork.wixsite.com/index" ]; then
-          echo "Directory does not exist!"
+          echo "Error: Directory './site/educationwithwork.wixsite.com/index' does not exist!"
           exit 1
         fi
 
-    - name: Copy Processed Files
+    - name: Copy Processed Files to Main Directory
       run: |
         cp -a ./site/educationwithwork.wixsite.com/index/. ./
 
     - name: Create ZIP for Deployment
       run: |
         zip -r deploy.zip ./*
+
+    - name: Check Environment Variables
+      run: |
+        if [ -z "${{ secrets.CF_API_TOKEN }}" ]; then
+          echo "Error: Cloudflare API token is not set!"
+          exit 1
+        fi
+        if [ -z "${{ env.CF_PROJECT_NAME }}" ]; then
+          echo "Error: Cloudflare Project name is not set!"
+          exit 1
+        fi
 
     - name: Deploy to Cloudflare Pages
       env:
@@ -50,6 +62,7 @@ jobs:
         if echo "$response" | grep -q '"success":true'; then
           echo "Successfully deployed to Cloudflare Pages"
         else
-          echo "Failed to deploy to Cloudflare Pages"
+          echo "Error: Failed to deploy to Cloudflare Pages"
+          echo "$response"
           exit 1
         fi

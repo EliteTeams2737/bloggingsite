@@ -13,24 +13,18 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Install HTTrack
-      run: sudo apt-get install httrack -y
+    - name: Install Dependencies
+      run: |
+        sudo apt-get install -y libnss3 libgconf-2-4
+        npm install puppeteer
 
     - name: Download Website with HTTrack
       run: |
+        sudo apt-get install httrack -y
         httrack https://educationwithwork.wixsite.com/index/ -O ./site/ "+*.wixsite.com/*" \
         --quiet --depth=3 --disable-security-limits --robots=0
 
-    # Install Node.js and Puppeteer
-    - name: Set up Node.js environment
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18' # Ensure you're using the correct Node.js version
-
-    - name: Install Puppeteer
-      run: npm install puppeteer
-
-    - name: Run Puppeteer Processing Script
+    - name: Run Processing Script
       run: node process_all_html.js
 
     - name: Commit changes

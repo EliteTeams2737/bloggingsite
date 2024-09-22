@@ -15,17 +15,27 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        # Install necessary system dependencies
         sudo apt-get install -y libnss3 libgconf-2-4
-        npm install puppeteer
+        
+        # Install HTTrack for website download
+        sudo apt-get install httrack -y
+
+        # Install Python and pip
+        sudo apt-get update
+        sudo apt-get install -y python3 python3-pip
+        
+        # Install required Python packages
+        pip3 install beautifulsoup4
 
     - name: Download Website with HTTrack
       run: |
-        sudo apt-get install httrack -y
         httrack https://educationwithwork.wixsite.com/index/ -O ./site/ "+*.wixsite.com/*" \
         --quiet --depth=3 --disable-security-limits --robots=0
 
-    - name: Run Processing Script
-      run: node process_all_html.js
+    - name: Run Python Processing Script
+      run: |
+        python3 process.py
 
     - name: Commit changes
       run: |

@@ -22,8 +22,15 @@ find "$download_dir" -name "*.html" | while read -r html_file; do
   echo "Meta Description: $meta_desc" >> seo_report.txt
   echo "----" >> seo_report.txt
 
-  # Remove the specified <div> block
-  sed -i '/<div id="WIX_ADS" class="EFLBov czJOIz ytGGBw">.*<\/div>/d' "$html_file"
+  # Remove the topmost element (first HTML tag)
+  sed -i '0,/<[^>]*>/d' "$html_file"
+
+  # Change the favicon to blog.eliteteams.online
+  # Remove existing favicon link, if any
+  sed -i '/<link[^>]*rel="icon"[^>]*>/d' "$html_file"
+  
+  # Insert the new favicon link before the closing </head> tag
+  sed -i '/<\/head>/i <link rel="icon" href="https://blog.eliteteams.online/favicon.ico">' "$html_file"
 
 done
 

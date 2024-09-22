@@ -1,4 +1,5 @@
 import os
+import shutil
 from bs4 import BeautifulSoup
 
 # The favicon URL to replace in the HTML files
@@ -41,3 +42,22 @@ for html_file in html_files:
     process_html(html_file)
 
 print("Processing completed for all HTML files.")
+
+# Copy everything from the subdirectory to the main directory
+def copy_to_main_directory(src_dir, dest_dir='./'):
+    for item in os.listdir(src_dir):
+        src_item = os.path.join(src_dir, item)
+        dest_item = os.path.join(dest_dir, item)
+        if os.path.isdir(src_item):
+            if not os.path.exists(dest_item):
+                shutil.copytree(src_item, dest_item)
+            else:
+                print(f"Directory {dest_item} already exists. Skipping.")
+        else:
+            shutil.copy2(src_item, dest_item)
+            print(f"Copied {src_item} to {dest_item}")
+
+# Copy all files and directories to the main directory
+copy_to_main_directory(html_dir)
+
+print("Copying completed.")

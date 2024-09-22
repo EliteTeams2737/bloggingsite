@@ -20,8 +20,18 @@ jobs:
       run: |
         httrack https://educationwithwork.wixsite.com/index/ -O ./site/ "+*.wixsite.com/*" \
         --quiet --depth=3 --disable-security-limits --robots=0
-    - name: Run Processing Script
-      run: bash process_html.sh
+
+    # Install Node.js and Puppeteer
+    - name: Set up Node.js environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18' # Ensure you're using the correct Node.js version
+
+    - name: Install Puppeteer
+      run: npm install puppeteer
+
+    - name: Run Puppeteer Processing Script
+      run: node process_all_html.js
 
     - name: Commit changes
       run: |

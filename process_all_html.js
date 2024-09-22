@@ -14,12 +14,12 @@ async function processHtmlFile(htmlFile) {
     // Open the HTML file in a browser
     await page.goto(`file://${path.resolve(htmlFile)}`);
 
-    // Remove the topmost Wix advertisement link element
+    // Remove the element containing the specific Wix link
     await page.evaluate(() => {
-      const wixAd = document.querySelector('a[data-testid="linkElement"]');
-      if (wixAd) {
-        wixAd.remove();
-        console.log('Wix ad removed');
+      const wixLink = document.querySelector('a[href*="http://www.wix.com/lpviral/enviral"]');
+      if (wixLink) {
+        wixLink.closest('a').remove(); // Removes the entire parent element containing the link
+        console.log('Wix advertisement element removed');
       }
     });
 

@@ -1,4 +1,4 @@
-HTTrack3.49-2+libhtsjava.so.2 launched on Tue, 24 Sep 2024 05:31:39 at https://educationwithwork.wixsite.com/index/ +*.wixsite.com/*
+HTTrack3.49-2+libhtsjava.so.2 launched on Tue, 24 Sep 2024 05:44:13 at https://educationwithwork.wixsite.com/index/ +*.wixsite.com/*
 (httrack https://educationwithwork.wixsite.com/index/ -O ./site/ +*.wixsite.com/* -q -r3 -%! -s0 )
 
 Information, Warnings and Errors reported for this mirror:
@@ -6,27 +6,28 @@ note:	the hts-log.txt file, and hts-cache folder, may contain sensitive informat
 	such as username/password authentication for websites mirrored in this project
 	do not share these files/folders if you want these information to remain private
 
-05:31:39	Warning: 	* security warning: !!! BYPASSING SECURITY LIMITS - MONITOR THIS SESSION WITH EXTREME CARE !!!
-05:31:48	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/c (from https://educationwithwork.wixsite.com/index/)
-05:31:48	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/t (from https://educationwithwork.wixsite.com/index/)
-05:31:48	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/ (from https://educationwithwork.wixsite.com/index/)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/robots.txt (from https://educationwithwork.wixsite.com/index/)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/sitemap.xml (from https://educationwithwork.wixsite.com/index/)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/feed.xml (from https://educationwithwork.wixsite.com/index/)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/${i.uri} (from https://educationwithwork.wixsite.com/index/)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index/)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/c (from https://educationwithwork.wixsite.com/index)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/t (from https://educationwithwork.wixsite.com/index)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/sitemap.xml (from https://educationwithwork.wixsite.com/index)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/feed.xml (from https://educationwithwork.wixsite.com/index)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/${i.uri} (from https://educationwithwork.wixsite.com/index)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/c (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/t (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/sitemap.xml (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/feed.xml (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/${i.uri} (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
-05:32:14	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
+05:44:13	Warning: 	* security warning: !!! BYPASSING SECURITY LIMITS - MONITOR THIS SESSION WITH EXTREME CARE !!!
+05:44:22	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/c (from https://educationwithwork.wixsite.com/index/)
+05:44:22	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/t (from https://educationwithwork.wixsite.com/index/)
+05:44:22	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/ (from https://educationwithwork.wixsite.com/index/)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/robots.txt (from https://educationwithwork.wixsite.com/index/)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/sitemap.xml (from https://educationwithwork.wixsite.com/index/)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/feed.xml (from https://educationwithwork.wixsite.com/index/)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/${i.uri} (from https://educationwithwork.wixsite.com/index/)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index/)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/c (from https://educationwithwork.wixsite.com/index)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/t (from https://educationwithwork.wixsite.com/index)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/sitemap.xml (from https://educationwithwork.wixsite.com/index)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/feed.xml (from https://educationwithwork.wixsite.com/index)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/${i.uri} (from https://educationwithwork.wixsite.com/index)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/c (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/t (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/robots.txt (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/sitemap.xml (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/feed.xml (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/${i.uri} (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
+05:44:34	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
 
-HTTrack Website Copier/3.49-2 mirror complete in 35 seconds : 31 links scanned, 10 files written (8922004 bytes overall), 1 files updated [953404 bytes received at 27240 bytes/sec], 3911007 bytes transferred using HTTP compression in 21 files, ratio 23%
-(20 errors, 1 warnings, 0 messages)
+HTTrack Website Copier/3.49-2 mirror complete in 21 seconds : 31 links scanned, 9 files written (8587651 bytes overall), no files updated [1063982 bytes received at 50665 bytes/sec], 4458642 bytes transferred using HTTP compression in 21 files, ratio 22%
+(21 errors, 1 warnings, 0 messages)

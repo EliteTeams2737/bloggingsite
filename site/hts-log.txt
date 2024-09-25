@@ -1,4 +1,4 @@
-HTTrack3.49-2+libhtsjava.so.2 launched on Wed, 25 Sep 2024 10:41:30 at https://educationwithwork.wixsite.com/index/ +*.wixsite.com/*
+HTTrack3.49-2+libhtsjava.so.2 launched on Wed, 25 Sep 2024 10:54:09 at https://educationwithwork.wixsite.com/index/ +*.wixsite.com/*
 (httrack https://educationwithwork.wixsite.com/index/ -O ./site/ +*.wixsite.com/* -q -r3 -%! -s0 )
 
 Information, Warnings and Errors reported for this mirror:
@@ -6,28 +6,32 @@ note:	the hts-log.txt file, and hts-cache folder, may contain sensitive informat
 	such as username/password authentication for websites mirrored in this project
 	do not share these files/folders if you want these information to remain private
 
-10:41:30	Warning: 	* security warning: !!! BYPASSING SECURITY LIMITS - MONITOR THIS SESSION WITH EXTREME CARE !!!
-10:41:39	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/c (from https://educationwithwork.wixsite.com/index/)
-10:41:39	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/t (from https://educationwithwork.wixsite.com/index/)
-10:41:39	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/ (from https://educationwithwork.wixsite.com/index/)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/robots.txt (from https://educationwithwork.wixsite.com/index/)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/sitemap.xml (from https://educationwithwork.wixsite.com/index/)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/feed.xml (from https://educationwithwork.wixsite.com/index/)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/${i.uri} (from https://educationwithwork.wixsite.com/index/)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index/)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/c (from https://educationwithwork.wixsite.com/index)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/t (from https://educationwithwork.wixsite.com/index)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/sitemap.xml (from https://educationwithwork.wixsite.com/index)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/feed.xml (from https://educationwithwork.wixsite.com/index)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/${i.uri} (from https://educationwithwork.wixsite.com/index)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/c (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/t (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/robots.txt (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/sitemap.xml (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/feed.xml (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/${i.uri} (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
-10:41:58	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts)
+10:54:09	Warning: 	* security warning: !!! BYPASSING SECURITY LIMITS - MONITOR THIS SESSION WITH EXTREME CARE !!!
+10:56:18	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/c (from https://educationwithwork.wixsite.com/index/)
+10:56:18	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/t (from https://educationwithwork.wixsite.com/index/)
+10:56:18	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/ (from https://educationwithwork.wixsite.com/index/)
+10:56:24	Warning: 	Retry after error 500 (Internal Server Error) at link https://educationwithwork.wixsite.com/index/blog-feed.xml (from https://educationwithwork.wixsite.com/index/)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/robots.txt (from https://educationwithwork.wixsite.com/index/)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/sitemap.xml (from https://educationwithwork.wixsite.com/index/)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/feed.xml (from https://educationwithwork.wixsite.com/index/)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/${i.uri} (from https://educationwithwork.wixsite.com/index/)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index/)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/c (from https://educationwithwork.wixsite.com/index)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/t (from https://educationwithwork.wixsite.com/index)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/sitemap.xml (from https://educationwithwork.wixsite.com/index)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/feed.xml (from https://educationwithwork.wixsite.com/index)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/${i.uri} (from https://educationwithwork.wixsite.com/index)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index)
+10:56:42	Warning: 	Retry after error 500 (Internal Server Error) at link https://educationwithwork.wixsite.com/index/blog-feed.xml (from https://educationwithwork.wixsite.com/index/)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/10-must-have-gadgets-for-tech-enthusiasts (from https://educationwithwork.wixsite.com/index/my-blog)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/c (from https://educationwithwork.wixsite.com/index/post/copy-of-10-must-have-gadgets-for-tech-enthusiasts)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/t (from https://educationwithwork.wixsite.com/index/post/copy-of-10-must-have-gadgets-for-tech-enthusiasts)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/robots.txt (from https://educationwithwork.wixsite.com/index/post/copy-of-10-must-have-gadgets-for-tech-enthusiasts)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/sitemap.xml (from https://educationwithwork.wixsite.com/index/post/copy-of-10-must-have-gadgets-for-tech-enthusiasts)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/feed.xml (from https://educationwithwork.wixsite.com/index/post/copy-of-10-must-have-gadgets-for-tech-enthusiasts)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/${i.uri} (from https://educationwithwork.wixsite.com/index/post/copy-of-10-must-have-gadgets-for-tech-enthusiasts)
+10:56:42	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index/post/copy-of-10-must-have-gadgets-for-tech-enthusiasts)
+10:56:43	Error: 	"Internal Server Error" (500) after 2 retries at link https://educationwithwork.wixsite.com/index/blog-feed.xml (from https://educationwithwork.wixsite.com/index/)
 
-HTTrack Website Copier/3.49-2 mirror complete in 28 seconds : 31 links scanned, 9 files written (8588163 bytes overall), no files updated [1070981 bytes received at 38249 bytes/sec], 4438408 bytes transferred using HTTP compression in 21 files, ratio 22%
-(21 errors, 1 warnings, 0 messages)
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 34 seconds : 34 links scanned, 8 files written (8730221 bytes overall), 8 files updated [3269146 bytes received at 21228 bytes/sec], 14057926 bytes transferred using HTTP compression in 33 files, ratio 22%
+(23 errors, 3 warnings, 0 messages)

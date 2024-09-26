@@ -1,4 +1,4 @@
-HTTrack3.49-2+libhtsjava.so.2 launched on Thu, 26 Sep 2024 22:26:08 at https://educationwithwork.wixsite.com/index/ +*.wixsite.com/*
+HTTrack3.49-2+libhtsjava.so.2 launched on Thu, 26 Sep 2024 22:41:57 at https://educationwithwork.wixsite.com/index/ +*.wixsite.com/*
 (httrack https://educationwithwork.wixsite.com/index/ -O ./site/ +*.wixsite.com/* -q -r3 -%! -s0 )
 
 Information, Warnings and Errors reported for this mirror:
@@ -6,28 +6,28 @@ note:	the hts-log.txt file, and hts-cache folder, may contain sensitive informat
 	such as username/password authentication for websites mirrored in this project
 	do not share these files/folders if you want these information to remain private
 
-22:26:08	Warning: 	* security warning: !!! BYPASSING SECURITY LIMITS - MONITOR THIS SESSION WITH EXTREME CARE !!!
-22:26:17	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/c (from https://educationwithwork.wixsite.com/index/)
-22:26:17	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/t (from https://educationwithwork.wixsite.com/index/)
-22:26:17	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/ (from https://educationwithwork.wixsite.com/index/)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/robots.txt (from https://educationwithwork.wixsite.com/index/)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/sitemap.xml (from https://educationwithwork.wixsite.com/index/)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/feed.xml (from https://educationwithwork.wixsite.com/index/)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/${i.uri} (from https://educationwithwork.wixsite.com/index/)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index/)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/c (from https://educationwithwork.wixsite.com/index)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/t (from https://educationwithwork.wixsite.com/index)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/sitemap.xml (from https://educationwithwork.wixsite.com/index)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/feed.xml (from https://educationwithwork.wixsite.com/index)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/${i.uri} (from https://educationwithwork.wixsite.com/index)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/c (from https://educationwithwork.wixsite.com/index/post/what-are-the-upcoming-cybersecurity-trends-to-watch-out-for-in-2022)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/t (from https://educationwithwork.wixsite.com/index/post/what-are-the-upcoming-cybersecurity-trends-to-watch-out-for-in-2022)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/robots.txt (from https://educationwithwork.wixsite.com/index/post/what-are-the-upcoming-cybersecurity-trends-to-watch-out-for-in-2022)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/sitemap.xml (from https://educationwithwork.wixsite.com/index/post/what-are-the-upcoming-cybersecurity-trends-to-watch-out-for-in-2022)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/feed.xml (from https://educationwithwork.wixsite.com/index/post/what-are-the-upcoming-cybersecurity-trends-to-watch-out-for-in-2022)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/${i.uri} (from https://educationwithwork.wixsite.com/index/post/what-are-the-upcoming-cybersecurity-trends-to-watch-out-for-in-2022)
-22:26:30	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index/post/what-are-the-upcoming-cybersecurity-trends-to-watch-out-for-in-2022)
+22:41:57	Warning: 	* security warning: !!! BYPASSING SECURITY LIMITS - MONITOR THIS SESSION WITH EXTREME CARE !!!
+22:42:06	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/c (from https://educationwithwork.wixsite.com/index/)
+22:42:06	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/t (from https://educationwithwork.wixsite.com/index/)
+22:42:06	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/ (from https://educationwithwork.wixsite.com/index/)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/robots.txt (from https://educationwithwork.wixsite.com/index/)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/sitemap.xml (from https://educationwithwork.wixsite.com/index/)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/feed.xml (from https://educationwithwork.wixsite.com/index/)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/${i.uri} (from https://educationwithwork.wixsite.com/index/)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index/)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/c (from https://educationwithwork.wixsite.com/index)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/t (from https://educationwithwork.wixsite.com/index)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/sitemap.xml (from https://educationwithwork.wixsite.com/index)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/feed.xml (from https://educationwithwork.wixsite.com/index)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/${i.uri} (from https://educationwithwork.wixsite.com/index)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/c (from https://educationwithwork.wixsite.com/index/post/what-are-the-upcoming-cybersecurity-trends-to-watch-out-for-in-2022)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/t (from https://educationwithwork.wixsite.com/index/post/what-are-the-upcoming-cybersecurity-trends-to-watch-out-for-in-2022)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/robots.txt (from https://educationwithwork.wixsite.com/index/post/what-are-the-upcoming-cybersecurity-trends-to-watch-out-for-in-2022)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/sitemap.xml (from https://educationwithwork.wixsite.com/index/post/what-are-the-upcoming-cybersecurity-trends-to-watch-out-for-in-2022)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/feed.xml (from https://educationwithwork.wixsite.com/index/post/what-are-the-upcoming-cybersecurity-trends-to-watch-out-for-in-2022)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/${i.uri} (from https://educationwithwork.wixsite.com/index/post/what-are-the-upcoming-cybersecurity-trends-to-watch-out-for-in-2022)
+22:42:19	Error: 	"Not Found" (404) at link https://educationwithwork.wixsite.com/index/post/decodeURIComponent(e (from https://educationwithwork.wixsite.com/index/post/what-are-the-upcoming-cybersecurity-trends-to-watch-out-for-in-2022)
 
-HTTrack Website Copier/3.49-2 mirror complete in 22 seconds : 30 links scanned, 8 files written (7655029 bytes overall), no files updated [1052756 bytes received at 47852 bytes/sec], 4441883 bytes transferred using HTTP compression in 21 files, ratio 22%
+HTTrack Website Copier/3.49-2 mirror complete in 22 seconds : 30 links scanned, 8 files written (7655029 bytes overall), no files updated [1053480 bytes received at 47885 bytes/sec], 4441879 bytes transferred using HTTP compression in 21 files, ratio 22%
 (21 errors, 1 warnings, 0 messages)

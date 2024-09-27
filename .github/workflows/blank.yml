@@ -23,11 +23,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install beautifulsoup4 requests
 
-    - name: Download Website with HTTrack
+    - name: Install wget
       run: |
-        sudo apt-get install httrack -y
-        httrack https://educationwithwork.wixsite.com/index/ -O ./site/ "+*.wixsite.com/*" \
-        --quiet --depth=3 --disable-security-limits --robots=0
+        sudo apt-get update
+        sudo apt-get install wget -y
+
+    - name: Download Website with wget
+      run: |
+        wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://educationwithwork.wixsite.com/index/ -P ./site/
 
     - name: Run Python Processing Script
       run: python process.py  # Assuming your script is named process.py and is located in the repo
@@ -47,4 +50,4 @@ jobs:
     
     - name: Push changes
       run: |
-        git push
+        git push 

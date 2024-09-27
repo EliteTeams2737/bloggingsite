@@ -21,16 +21,52 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install beautifulsoup4 requests
+        pip install beautifulsoup4 requests selenium
 
-    - name: Install wget
+    - name: Install Chrome and ChromeDriver
       run: |
         sudo apt-get update
-        sudo apt-get install wget -y
+        sudo apt-get install -y chromium-browser
+        CHROME_VERSION=$(google-chrome --version | grep -oP '[0-9.]+')
+        CHROMEDRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION)
+        wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
+        unzip chromedriver_linux64.zip
+        sudo mv chromedriver /usr/local/bin/
+        sudo chmod +x /usr/local/bin/chromedriver
 
-    - name: Download Website with wget
+    - name: Download Website Content with Selenium
       run: |
-        wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://educationwithwork.wixsite.com/index/ -P ./site/
+        echo 'from selenium import webdriver
+import time
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.add_argument("--headless")  # Run in headless mode
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+service = Service("/usr/local/bin/chromedriver")
+
+driver = webdriver.Chrome(service=service, options=options)
+driver.get("https://educationwithwork.wixsite.com/index")
+
+# Scroll to the bottom of the page to load all content
+last_height = driver.execute_script("return document.body.scrollHeight")
+while True:
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    time.sleep(2)  # Wait for new content to load
+    new_height = driver.execute_script("return document.body.scrollHeight")
+    if new_height == last_height:
+        break
+    last_height = new_height
+
+# Save the page source to a file
+with open("site/content.html", "w", encoding="utf-8") as f:
+    f.write(driver.page_source)
+
+driver.quit()' > scrape.py
+
+        python scrape.py
 
     - name: Run Python Processing Script
       run: python process.py  # Assuming your script is named process.py and is located in the repo

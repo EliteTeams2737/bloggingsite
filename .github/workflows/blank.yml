@@ -1,50 +1,36 @@
-name: Scrape and Process Website
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 
-on:
-  schedule:
-    - cron: '*/5 * * * *'  # Runs every 5 minutes
-  workflow_dispatch:  # Manual trigger
+# Set up Chrome options
+options = Options()
+options.add_argument('--headless')  # Run in headless mode for GitHub Actions
+options.add_argument('--no-sandbox')  # Bypass OS security model
+options.add_argument('--disable-dev-shm-usage')  # Overcome limited resource problems
 
-jobs:
-  scrape-and-process:
-    runs-on: ubuntu-latest
+# Specify the path to ChromeDriver (this should match where it's installed in GitHub Actions)
+service = Service('/usr/local/bin/chromedriver')
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+# Start the WebDriver and load the page
+driver = webdriver.Chrome(service=service, options=options)
+driver.get('https://educationwithwork.wixsite.com/index')
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
+# Scroll down to load all dynamic content
+last_height = driver.execute_script('return document.body.scrollHeight')
 
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install beautifulsoup4 requests selenium
+# Loop to scroll until all content is loaded
+while True:
+    driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
+    time.sleep(2)  # Wait for the page to load
+    new_height = driver.execute_script('return document.body.scrollHeight')
+    if new_height == last_height:
+        break
+    last_height = new_height
 
-    - name: Install Chrome and ChromeDriver
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y chromium-browser
-        wget https://chromedriver.storage.googleapis.com/$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip
-        unzip chromedriver_linux64.zip
-        sudo mv chromedriver /usr/local/bin/chromedriver
-        sudo chmod +x /usr/local/bin/chromedriver
+# Save the loaded page source
+with open('site/content.html', 'w', encoding='utf-8') as f:
+    f.write(driver.page_source)
 
-    - name: Run Selenium Scraping Script
-      run: python scrape.py  # Execute the Python script from your repository
-
-    - name: Run Python Processing Script
-      run: python process.py  # Assuming process.py is in your repository
-
-    - name: Commit changes
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add .
-        git commit -m "Processed and scraped website"
-
-    - name: Push changes
-      run: |
-        git push
+# Close the WebDriver
+driver.quit()

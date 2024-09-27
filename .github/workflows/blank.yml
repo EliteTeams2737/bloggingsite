@@ -36,7 +36,8 @@ jobs:
 
     - name: Download Website Content with Selenium
       run: |
-        echo 'from selenium import webdriver
+        cat <<EOF > scrape.py
+from selenium import webdriver
 import time
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -64,7 +65,8 @@ while True:
 with open("site/content.html", "w", encoding="utf-8") as f:
     f.write(driver.page_source)
 
-driver.quit()' > scrape.py
+driver.quit()
+EOF
 
         python scrape.py
 
@@ -86,4 +88,4 @@ driver.quit()' > scrape.py
     
     - name: Push changes
       run: |
-        git push 
+        git push

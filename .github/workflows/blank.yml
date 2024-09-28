@@ -13,36 +13,21 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
-
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install beautifulsoup4 requests selenium
-
-    - name: Install Chrome and ChromeDriver
+    - name: Install HTTrack
       run: |
         sudo apt-get update
-        sudo apt-get install -y chromium-browser
-        CHROME_VERSION=$(chromium-browser --version | grep -oP '\d+\.\d+\.\d+')
-        CHROMEDRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-        wget https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip
-        unzip chromedriver_linux64.zip
-        sudo mv chromedriver /usr/local/bin/chromedriver
-        sudo chmod +x /usr/local/bin/chromedriver
+        sudo apt-get install -y httrack
 
-    - name: Run Python Scraping Script
-      run: python scrape.py
+    - name: Download Website with HTTrack
+      run: |
+        httrack https://educationwithwork.wixsite.com/index -O ./website-download --mirror --quiet --update
 
     - name: Commit changes
       run: |
         git config --global user.name "GitHub Actions Bot"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add .
-        git commit -m "Processed and scraped website" || echo "No changes to commit"
+        git commit -m "Downloaded and processed website via HTTrack" || echo "No changes to commit"
 
     - name: Push changes
       run: git push

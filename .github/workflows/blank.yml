@@ -27,14 +27,23 @@ jobs:
         run: |
           node -e "
           const { chromium } = require('playwright');
+          const fs = require('fs');
+          const path = require('path');
+          const url = 'https://educationwithwork.wixsite.com/index';
+          
           (async () => {
             const browser = await chromium.launch();
             const page = await browser.newPage();
-            await page.goto('https://educationwithwork.wixsite.com/index', { waitUntil: 'networkidle' });
+            await page.goto(url, { waitUntil: 'networkidle' });
             await page.waitForTimeout(5000); // Wait to ensure all content is loaded
-            await page.content();  // This retrieves the HTML content
-            await page.screenshot({ path: 'website/screenshot.png' }); // Save screenshot for verification
-            await page.pdf({ path: 'website/website.pdf', format: 'A4' }); // Save PDF of page
+
+            // Save the HTML content
+            const content = await page.content();
+            fs.writeFileSync(path.join('website', 'index.html'), content);
+
+            // Take a screenshot for verification
+            await page.screenshot({ path: 'website/screenshot.png' });
+
             await page.close();
             await browser.close();
           })();

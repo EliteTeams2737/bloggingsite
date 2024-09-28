@@ -19,7 +19,9 @@ jobs:
           node-version: '16'
 
       - name: Install Playwright
-        run: npm install playwright
+        run: |
+          npm install playwright
+          npx playwright install  # Install the required browsers
 
       - name: Download Website with Playwright
         run: |

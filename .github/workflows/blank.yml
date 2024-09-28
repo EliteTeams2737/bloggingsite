@@ -3,7 +3,7 @@ name: Scrape and Process Website
 on:
   schedule:
     - cron: '*/5 * * * *'  # Runs every 5 minutes
-  workflow_dispatch:  # Manual trigger
+  workflow_dispatch:  # Allows manual trigger
 
 jobs:
   scrape-and-process:
@@ -27,9 +27,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y chromium-browser
-        # Get the version of the installed Chrome
-        CHROME_VERSION=$(chromium-browser --version | grep -oP '\d+\.\d+\.\d+\.\d+')
-        # Download and install the corresponding version of ChromeDriver
+        CHROME_VERSION=$(chromium-browser --version | grep -oP '\d+\.\d+\.\d+')
         CHROMEDRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
         wget https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip
         unzip chromedriver_linux64.zip
@@ -41,11 +39,10 @@ jobs:
 
     - name: Commit changes
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "GitHub Actions Bot"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add .
-        git commit -m "Processed and scraped website"
-    
+        git commit -m "Processed and scraped website" || echo "No changes to commit"
+
     - name: Push changes
-      run: |
-        git push
+      run: git push

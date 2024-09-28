@@ -1,33 +1,45 @@
-name: Scrape and Process Website
+name: Download Wix Website
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'  # Runs every 5 minutes
-  workflow_dispatch:  # Allows manual trigger
+    - cron: '0 0 * * *'  # Runs daily at midnight
 
 jobs:
-  scrape-and-process:
+  download_site:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    - name: Install HTTrack
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y httrack
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
 
-    - name: Download Website with HTTrack
-      run: |
-        httrack https://educationwithwork.wixsite.com/index -O ./website-download --mirror --quiet --update
+      - name: Install Playwright
+        run: npm install playwright
 
-    - name: Commit changes
-      run: |
-        git config --global user.name "GitHub Actions Bot"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add .
-        git commit -m "Downloaded and processed website via HTTrack" || echo "No changes to commit"
+      - name: Download Website with Playwright
+        run: |
+          node -e "
+          const { chromium } = require('playwright');
+          (async () => {
+            const browser = await chromium.launch();
+            const page = await browser.newPage();
+            await page.goto('https://educationwithwork.wixsite.com/index', { waitUntil: 'networkidle' });
+            await page.waitForTimeout(5000); // Wait to ensure all content is loaded
+            await page.content();  // This retrieves the HTML content
+            await page.screenshot({ path: 'website/screenshot.png' }); // Save screenshot for verification
+            await page.pdf({ path: 'website/website.pdf', format: 'A4' }); // Save PDF of page
+            await page.close();
+            await browser.close();
+          })();
+          "
 
-    - name: Push changes
-      run: git push
+      - name: Upload Downloaded Files
+        uses: actions/upload-artifact@v3
+        with:
+          name: downloaded-website
+          path: website/

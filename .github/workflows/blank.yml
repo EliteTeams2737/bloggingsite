@@ -37,12 +37,18 @@ jobs:
             await page.goto(url, { waitUntil: 'networkidle' });
             await page.waitForTimeout(5000); // Wait to ensure all content is loaded
 
+            // Ensure the directory exists
+            const dir = 'website';
+            if (!fs.existsSync(dir)) {
+              fs.mkdirSync(dir, { recursive: true });
+            }
+
             // Save the HTML content
             const content = await page.content();
-            fs.writeFileSync(path.join('website', 'index.html'), content);
+            fs.writeFileSync(path.join(dir, 'index.html'), content);
 
             // Take a screenshot for verification
-            await page.screenshot({ path: 'website/screenshot.png' });
+            await page.screenshot({ path: path.join(dir, 'screenshot.png') });
 
             await page.close();
             await browser.close();

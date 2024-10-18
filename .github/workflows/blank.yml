@@ -29,7 +29,7 @@ jobs:
           const { chromium } = require('playwright');
           const fs = require('fs');
           const path = require('path');
-          const url = 'https://educationwithwork.wixsite.com/index';
+          const url = 'https://elite-team-eight.vercel.app';
           
           (async () => {
             const browser = await chromium.launch();
